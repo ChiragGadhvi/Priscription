@@ -28,8 +28,8 @@ export default function OnBoardingScreen() {
                 <LottieView source={require('../assets/animations/a.json')} autoPlay loop />
               </View>
             ),
-            title: 'Easy to Use',
-            subtitle: 'Digitalization of Prescriptions!',
+            title: 'Our Main Goal',
+            subtitle: 'Digitalization of Prescriptions!!',
           },
           {
             backgroundColor: '#fef3c7',
@@ -38,8 +38,8 @@ export default function OnBoardingScreen() {
                 <LottieView source={require('../assets/animations/b.json')} autoPlay loop />
               </View>
             ),
-            title: 'Easy to Implement',
-            subtitle: 'Simple intructions!!',
+            title: 'Saves Time and Efficient',
+            subtitle: 'Clean organization of documents!!',
           },
           {
             backgroundColor: '#a78bfa',
@@ -48,8 +48,8 @@ export default function OnBoardingScreen() {
                 <LottieView source={require('../assets/animations/c.json')} autoPlay loop />
               </View>
             ),
-            title: 'Digital Prescriptions',
-            subtitle: 'Get your work done seamlessly without interruption',
+            title: 'Doctor Friendly',
+            subtitle: 'Easy to Implement',
           },
         ]}
       />
