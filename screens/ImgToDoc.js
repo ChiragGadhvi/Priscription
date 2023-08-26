@@ -1,10 +1,23 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import DocumentScanner from 'react-native-document-scanner-plugin'
 
-
-export default function SpeechToText() {
+export default function ImgToDoc() {
+  const [scannedDoc,setScannedDoc] = useState(null);
+  const scanDocument = async () => {
+    // start the document scanner
+    const { scannedImages } = await DocumentScanner.scanDocument({
+      croppedImageQuality: 100
+    })
+  
+    // get back an array with scanned image file paths
+    if (scannedImages.length > 0) {
+      // set the img src, so we can view the first scanned image
+      setScannedDoc(scannedImages[0])
+    }
+  }
 
   return (
     <View className="flex-1 bg-white">
@@ -16,10 +29,15 @@ export default function SpeechToText() {
         <View className="space-y-2 flex-1">
           <Text className="text-gray-700 mt-5 font-semibold ml-1" style={{ marginLeft: 10, fontSize: 20 }}>Doctor</Text>
           <View className="bg-neutral-200 rounded-3xl p-4" style={{ height: hp(58) }}>
+            {
+              scannedDoc != null && (
+                <Image source={{uri: scannedDoc}} />
+              )
+            }
           </View>
         </View>
         <View className="flex justfy-center items-center ">
-          <TouchableOpacity>
+          <TouchableOpacity >
             <Image className="mb-10" source={require('../assets/animations/camera.png')} style={{ width: hp(7), height: hp(7) }} />
           </TouchableOpacity>
           <TouchableOpacity className="bg-neural-400 rounded-3xl p-2 absolute right-10">
