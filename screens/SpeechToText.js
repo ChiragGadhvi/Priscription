@@ -8,7 +8,7 @@ export default function SpeechToText() {
 
   const [result, setResult] = React.useState("");
   const [error, setError] = React.useState("");
-  const [recording, setRecording] = React.useState(true);
+  const [recording, setRecording] = React.useState(false);
 
   return (
     <View className="flex-1 bg-white">
