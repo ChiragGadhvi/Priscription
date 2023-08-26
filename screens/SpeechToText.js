@@ -1,37 +1,63 @@
-import { View, Text, StyleSheet , Image} from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import Voice from '@react-native-voice/voice'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 
 export default function SpeechToText() {
+
+  const [result, setResult] = React.useState("");
+  const [error, setError] = React.useState("");
+  const [recording, setrRecording] = React.useState(true);
+
+  Voice.onSpeechStart = () => setIsRecording(true);
+  Voice.onSpeechEnd = () => setIsRecording(false);
+  Voice.onSpeechError = (err) => setError(err.error);
+  Voice.onSpeechResults = (result) => setResult(result.value[0]);
+
+  const startRecording = async () => {
+    try {
+      await Voice.start('en-US');
+    } catch (err) {
+      setError(err);
+    }
+  }
+
+  const stopRecording = async () => {
+    try {
+      await Voice.stop();
+    } catch (error) {
+      setError(error);
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.temp1}>
+    <View className="flex-1 bg-white">
+      <SafeAreaView className="flex-1 flex mx-5">
         {/* doctor icon */}
-        <View style={styles.temp2}>
-          <Image source={require('../assets/animations/doctor.png')} style={styles.temp3} />
+        <View className="flex-row justify-center mt-4" >
+          <Image source={require('../assets/animations/doctor.png')} style={{ height: hp(15), width: hp(15) }} />
+        </View>
+        <View className="space-y-2 flex-1">
+          <Text className="text-gray-700 mt-5 font-semibold ml-1" style={{ marginLeft: 10, fontSize: 20 }}>Doctor</Text>
+          <View className="bg-neutral-200 rounded-3xl p-4" style={{ height: hp(58) }}>
+          </View>
+        </View>
+        <View className="flex justfy-center items-center ">
+          {
+            recording ? (
+              <TouchableOpacity>
+                <Image className="rounded-full items-center mb-9" source={require('../assets/animations/voiceLoading.gif')} style={{ width: hp(10), height: hp(10) }} />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity>
+                <Image className="rounded-full mb-9" source={require('../assets/animations/recordingIcon.png')} style={{ width: hp(10), height: hp(10) }} />
+              </TouchableOpacity>
+            )
+          }
         </View>
       </SafeAreaView>
     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightblue'
-  },
-  temp1: {
-    flex: 1,
-    marginLeft: 1.25
-  },
-  temp2: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  temp3:{
-    marginTop: 10,
-    height: 150,
-    width: 150
-  }
-})
