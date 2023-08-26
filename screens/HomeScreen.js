@@ -21,10 +21,10 @@ export default function HomeScreen() {
       </View>
       <Text style={styles.text}>Chose any Option</Text>
       <View >
-      <TouchableOpacity onPress={handleReset} style={styles.reset}>
+      <TouchableOpacity onPress={() => navigation.navigate('SpeechToText')} style={styles.reset}>
         <Text>Speech To Text</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleReset} style={styles.reset}>
+      <TouchableOpacity onPress={() => navigation.navigate('ImgToDoc')} style={styles.reset}>
         <Text>Img to Doc</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleReset} style={styles.reset}>
