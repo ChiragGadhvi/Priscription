@@ -8,28 +8,7 @@ export default function SpeechToText() {
 
   const [result, setResult] = React.useState("");
   const [error, setError] = React.useState("");
-  const [recording, setrRecording] = React.useState(true);
-
-  Voice.onSpeechStart = () => setIsRecording(true);
-  Voice.onSpeechEnd = () => setIsRecording(false);
-  Voice.onSpeechError = (err) => setError(err.error);
-  Voice.onSpeechResults = (result) => setResult(result.value[0]);
-
-  const startRecording = async () => {
-    try {
-      await Voice.start('en-US');
-    } catch (err) {
-      setError(err);
-    }
-  }
-
-  const stopRecording = async () => {
-    try {
-      await Voice.stop();
-    } catch (error) {
-      setError(error);
-    }
-  }
+  const [recording, setRecording] = React.useState(true);
 
   return (
     <View className="flex-1 bg-white">
@@ -55,6 +34,12 @@ export default function SpeechToText() {
               </TouchableOpacity>
             )
           }
+          <TouchableOpacity className="bg-neural-400 rounded-3xl p-2 absolute right-10">
+          <Image className="rounded-full " source={require('../assets/animations/icon.png')} style={{ width: hp(7), height: hp(7) }} />
+          </TouchableOpacity>
+          <TouchableOpacity className="bg-neural-400 rounded-3xl p-2 absolute left-10">
+          <Image className="rounded-full " source={require('../assets/animations/chatgptIcon.png')} style={{ width: hp(7), height: hp(7) }} />
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     </View>
