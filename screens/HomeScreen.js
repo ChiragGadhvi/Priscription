@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import LottieView from 'lottie-react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -19,16 +19,19 @@ export default function HomeScreen() {
       <View style={styles.lottie}>
       <LottieView source={require('../assets/animations/d.json')} autoPlay loop />
       </View>
-      <Text style={styles.text}>Chose any Option</Text>
+      <Text style={styles.text}>Features</Text>
       <View >
       <TouchableOpacity onPress={() => navigation.navigate('SpeechToText')} style={styles.reset}>
-        <Text>Speech To Text</Text>
+        <Image source={require('../assets/animations/text-to-speech.png')}  style={{height: 45,width: 45}}/>
+        <Text style={{padding: 10, fontSize: 15}}>Speech To Text</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('ImgToDoc')} style={styles.reset}>
-        <Text>Img to Doc</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('ImgToDoc')} style={styles.reset2}>
+      <Image source={require('../assets/animations/bill.png')}  style={{height: 45,width: 45}}/>
+        <Text style={{padding: 10, fontSize: 15}}>Image to Document</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleReset} style={styles.reset}>
-        <Text>Reset</Text>
+      <TouchableOpacity onPress={handleReset} style={styles.reset3}>
+      <Image source={require('../assets/animations/idea.png')}  style={{height: 45,width: 45}}/>
+        <Text style={{padding: 10, fontSize: 15}}>About App</Text>
       </TouchableOpacity>
       </View>
       
@@ -39,8 +42,8 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 10,
+    // alignItems: 'center',
+    paddingHorizontal: 15,
     backgroundColor: 'lightblue'
   },
   lottie: {
@@ -49,14 +52,33 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: width*0.06,
-    marginBottom: 20
+    marginBottom: 20,
   },
   reset: {
-    backgroundColor: '#34d399',
+    backgroundColor: '#68D391',
     padding: 20,
-    borderRadius: 10,
+    borderRadius: 25,
     marginBottom: 10,
     alignItems: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    flexDirection: 'row'
+  },
+  reset2: {
+    backgroundColor: '#B794F4',
+    padding: 20,
+    borderRadius: 25,
+    marginBottom: 10,
+    alignItems: 'center',
+    fontWeight: 'bold',
+    flexDirection: 'row'
+  },
+  reset3: {
+    backgroundColor: '#F87171',
+    padding: 20,
+    borderRadius: 25,
+    marginBottom: 10,
+    alignItems: 'center',
+    fontWeight: 'bold',
+    flexDirection: 'row'
   }
 })
