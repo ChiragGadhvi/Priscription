@@ -1,0 +1,40 @@
+Patient ID , Doctor ID , Prescription Text         , Medicines                            ,Medicines,Patient Birthdate,
+P001       , D101      , Allergy treatment         , Loratadine, Fluticasone              , 1985-03-15       ,38
+P002       , D102      , Cold and flu remedy       , Acetaminophen, Pseudoephedrine       , 1992-07-21       ,31
+P003       , D103      , Pain management           , Ibuprofen, Naproxen                  , 1978-11-02       ,44
+P004       , D104      , Hypertension control      , Lisinopril, Amlodipine               , 1966-09-10       ,56
+P005       , D105      , Diabetes management       , Metformin, Insulin                   , 1973-05-08       ,50
+P006       , D101      , Allergy treatment         , Cetirizine, Beclomethasone           , 1999-12-17       ,23
+P007       , D103      , Antibiotic prescription   , Amoxicillin, Azithromycin            , 1988-08-05       ,35
+P008       , D104      , Pain relief               , Tramadol, Paracetamol                , 1971-02-28       ,52
+P009       , D102      , Respiratory infection     , Augmentin, Guaifenesin               , 2002-06-14       ,21
+P010       , D105      , Arthritis medication      , Methotrexate, Celecoxib              , 1959-09-30       ,63
+P011       , D101      , Digestive issues          , Omeprazole, Simethicone              , 1996-11-19       ,26
+P012       , D103      , Skin irritation           , Hydrocortisone, Calamine             , 1979-07-07       ,44
+P013       , D104      , Blood pressure control    , Losartan, Hydrochlorothiazide        , 1982-04-23       ,41
+P014       , D102      , Cold and flu remedy       , Ibuprofen, Vitamin C                 , 2001-08-09       ,22
+P015       , D105      , Diabetes management       , Sitagliptin, Liraglutide             , 1968-01-12       ,55
+P016       , D101      , Allergy treatment         , Fexofenadine, Nasal spray            , 1995-06-28       ,28
+P017       , D103      , Antibiotic prescription   , Cephalexin, Doxycycline              , 1987-03-03       ,36
+P018       , D104      , Pain relief               , Codeine, Naproxen                    , 1976-12-01       ,46
+P019       , D102      , Respiratory infection     , Azithromycin, Saline spray           , 2000-09-18       ,22
+P020       , D105      , Arthritis medication      , Etanercept, Prednisone               , 1974-11-25       ,48
+P021       , D101      , Digestive issues          , Ranitidine, Metoclopramide           , 1993-04-07       ,30
+P022       , D103      , Skin irritation           , Clobetasol, Antihistamine            , 1989-10-15       ,33
+P023       , D104      , Blood pressure control    , Atenolol, Chlorthalidone             , 2004-07-02       ,19
+P024       , D102      , Cold and flu remedy       , Echinacea, Zinc supplement           , 1998-03-26       ,25
+P025       , D105      , Diabetes management       , Glipizide, Metformin                 , 1963-05-20       ,60
+P026       , D101      , Allergy treatment         , Loratadine, Fluticasone              , 2002-12-08       ,20
+P027       , D103      , Antibiotic prescription   , Amoxicillin, Levofloxacin            , 1980-09-07       ,42
+P028       , D104      , Pain relief               , Oxycodone, Acetaminophen             , 1977-08-14       ,46
+P029       , D102      , Respiratory infection     , Clarithromycin, Steam therapy        , 2003-01-31       ,20
+P030       , D105      , Arthritis medication      , Methotrexate, Celecoxib              , 1956-06-03       ,67
+P031       , D101      , Digestive issues          , Esomeprazole, Probiotics             , 1990-10-09       ,32
+P032       , D103      , Skin irritation           , Hydrocortisone, Calamine             , 1983-07-12       ,40
+P033       , D104      , Blood pressure control    , Lisinopril, Amlodipine               , 1997-02-19       ,26
+P034       , D102      , Cold and flu remedy       , Paracetamol, Vitamin C               , 2000-11-08       ,22
+P035       , D105      , Diabetes management       , Insulin, Metformin                   , 1975-09-27       ,47
+P036       , D101      , Allergy treatment         , Cetirizine, Beclomethasone           , 1998-04-14       ,25
+P037       , D103      , Antibiotic prescription   , Ciprofloxacin, Azithromycin          , 1986-06-22       ,37
+P038       , D104      , Pain relief               , Tramadol, Ibuprofen                  , 1972-01-05       ,51
+P039       , D102      , Respiratory infection,,,,
