@@ -19,7 +19,8 @@ export default function SpeechToText() {
         </View>
         <View className="space-y-2 flex-1">
           <Text className="text-gray-700 mt-5 font-semibold ml-1" style={{ marginLeft: 10, fontSize: 20 }}>Doctor</Text>
-          <View className="bg-neutral-200 rounded-3xl p-4" style={{ height: hp(58) }}>
+          <View className="bg-neutral-200 rounded-3xl p-4 justify-center" style={{ height: hp(58) }}>
+            <Image  source={require('../assets/images/doc1.png')} style={{height:400,width:350}} resizeMode="contain"/>
           </View>
         </View>
         <View className="flex justfy-center items-center ">
